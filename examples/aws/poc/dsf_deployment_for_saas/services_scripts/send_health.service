@@ -1,0 +1,7 @@
+[Unit]
+Description=Send health check ro SaaS
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/stdbuf -oL /usr/local/bin/send_health.sh
+Environment="JSONAR_LOCALDIR=/imperva/local"
